@@ -8,12 +8,10 @@ double pown(double value, uint16_t n) {
     if (n == 0) {
         return 1;
     }
-    else {
-        for (int i = 0; i < n - 1; i++) {
-            val *= value;
-        }
-        return val;
+    for (int i = 0; i < n - 1; i++) {
+        val *= value;
     }
+    return val;
 }
 
 uint64_t fact(uint16_t n) {
@@ -21,10 +19,8 @@ uint64_t fact(uint16_t n) {
     if (n == 0) {
         return 1;
     }
-    else {
-        for (int i = 1; i <= n; i++) {
-            sr *= i;
-        }
+    for (int i = 1; i <= n; i++) {
+        sr *= i;
     }
     return sr;
 }
@@ -44,7 +40,7 @@ double expn(double x, uint16_t count) {
 }
 
 double sinn(double x, uint16_t count) {
-    double otv=x;
+    double otv = x;
     for (int i = 2; i <= count; i++) {
         otv += (pown(-1, i - 1) * (pown(x, 2 * i - 1) / (fact(2 * i - 1))));
     }
